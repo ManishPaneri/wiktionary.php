@@ -1,7 +1,12 @@
 <?php
+
+/* Wiktionary.php is a PHP "library" to convert Simple wiktionary HTML page convert to text
+ * Author: Manish Kumar Paneri 
+ */
+
 function mysqlDBConnection(){
 
-	$connection = mysqli_connect("localhost","root","root");
+	$connection = mysqli_connect("localhost","root","reloded23");
 		if (!$connection) {
 			die("database connection failed: " . mysqli_connect_error());
 		}

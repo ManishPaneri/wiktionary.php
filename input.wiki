@@ -1,0 +1,65 @@
+{{Wikipedia}}
+{{BE850}}
+{{BNC1HW}}
+
+===Pronunciation===
+*{{AHD|blăk}}
+*{{IPA|/blæk/}}
+*{{SAMPA|/<tt>bl{k</tt>/}}
+*{{audio|en-uk-black.ogg|Audio (UK)}}
+
+==Noun==
+{{noun}}
+[[File:AfricanAmericans.jpg|thumb|Famous blacks]]
+# The [[dark]]est [[color]];  with no [[light]];  the color of the [[sky]] at [[night]].  <span style="background-color: black; width: 80px">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+#:''He stood alone in the '''black''' of the night,.''
+#{{countable}}, {{usually plural}} '''Blacks''' are people of a [[race]] with dark coloured skin.
+#: ''There were many whites, some '''blacks''' and native Americans, and a few Asians. ''
+# {{singular}} If a company is in the '''black''', it is making a profit. (opposite = in the red)
+#: ''It took a year for the restaurant to get in the '''black'''.''
+
+===Antonyms===
+*[[white]]
+
+===Related words===
+*[[blacken]]
+*[[blackout]]
+
+{{colors}}
+
+==Adjective==
+{{adjective|black|blacker|blackest}}
+# colored black
+#: ''The '''black''' dog was the color of [[night]].''
+# If someone is '''black''', they belong to a [[race]] with dark-coloured skin.
+#:''It's still difficult for a '''black''' person to become a manager.''
+#: ''About 30 percent of Southfield's 80,000 citizens are '''black'''. ''
+# {{attrib}} About a [[race]] with dark-coloured skin.
+#: ''More and more universities are offering courses in '''black''' history.''
+# {{attrib}} '''Black''' coffee or tea has no milk in it.
+# If something is '''black''', it is very bad.
+#: ''The day the war started was a '''black''' day in history.''
+
+===Antonyms===
+*[[white]]
+
+===Related words===
+*[[blackened]]
+
+==Verb==
+{{verb}}
+#{{transitive}} If you '''black''' something, you color it black.
+#:''He '''blacked''' his boots before the party.''
+#:''They '''blacked''' out the windows so the light would not be seen outside.''
+#: ''A number of lines in the report were '''blacked''' out.''
+#{{intransitive}} If you '''black''' out, you stop seeing and hearing everything around you and you fall down.
+#: ''After his tenth beer, he '''blacked''' out and we couldn't wake him up.''
+
+===Synonyms===
+*[[blackened]]
+
+===Related words and phrases===
+*[[darken]]
+*[[polish]]
+
+{{commonscat}}

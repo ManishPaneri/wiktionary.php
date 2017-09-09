@@ -1,13 +1,7 @@
 <?php
-/* Wiky.php - A tiny PHP "library" to convert Wiki Markup language to HTML
- * Author: Toni Lähdekorpi <toni@lygon.net>
- *
- * Code usage under any of these licenses:
- * Apache License 2.0, http://www.apache.org/licenses/LICENSE-2.0
- * Mozilla Public License 1.1, http://www.mozilla.org/MPL/1.1/
- * GNU Lesser General Public License 3.0, http://www.gnu.org/licenses/lgpl-3.0.html
- * GNU General Public License 2.0, http://www.gnu.org/licenses/gpl-2.0.html
- * Creative Commons Attribution 3.0 Unported License, http://creativecommons.org/licenses/by/3.0/
+
+/* Wiktionary.php is a PHP "library" to convert Simple wiktionary HTML page convert to text
+ * Author: Manish Kumar Paneri 
  */
 
 // This file demonstrates how to use Wiky.php.

@@ -1,4 +1,8 @@
 <?php
+/* Wiktionary.php is a PHP "library" to convert Simple wiktionary HTML page convert to text
+ * Author: Manish Kumar Paneri 
+ */
+
 header('Content-Type: application/json; charset=utf-8');
 $myfile = fopen("word_list.list", "r") or die("Unable to open file!");
 $string= fread($myfile,filesize("word_list.list"));

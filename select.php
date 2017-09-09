@@ -3,7 +3,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 function mysqlDBConnection(){
 
-	$connection = mysqli_connect("localhost","root","reloded23");
+	$connection = mysqli_connect("localhost","root","root");
 		if (!$connection) {
 			die("database connection failed: " . mysqli_connect_error());
 		}

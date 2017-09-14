@@ -12,23 +12,41 @@ require_once("wiky.inc.php");
 
 function get_string_word($string){
 	$array=array(
-		"Verb[change]",
-		"Adjective[change]",
-		"Antonyms[change]",
-		"Phrases[change]",
-		"Related words[change]",		
-		"Homophones[change]",
-		"Pronunciation[change]",
-		"Synonyms[change]",
-		"Idioms[change]",
-		"See also[change]",
-		"Derived words[change]",
-		"judges[change]",
-		"Verb 1[change]",
-		"Note[change]",
-		"Related words and phrases[change]",
+		"Verb",
+		"Adjective",
+		"Antonyms",
+		"Phrases",
+		"Related words",		
+		"Homophones",
+		"Pronunciation",
+		"Synonyms",
+		"Idioms",
+		"See also",
+		"Derived words",
+		"judges",
+		"Verb 2",
+		"Adverb",
+		"Verb 1",
+		"Note",
+		"Usage notes",
+		"Interjection",
+		"Usage",
+		"Related word",
+		"Gallery",
+		"&lt;gallery>",
+		"{{periodic table}}",
+		"{{wikipedia}}",
+		"{{family}}",
+		"{{basic math}}",
+		"{{solar system}}",
+		"{{astronomies}}",
+		"Common Terminology",
+		"Related words and phrases",
 		"The Periodic Table",
 		"Related words",
+		"Abbreviation",
+		"[[Category",
+		"\t",
 		'"\t\t\t\t\t",',
 		"\t\t",
 		"Basic math (edit)",
@@ -60,39 +78,70 @@ function get_correct_text($string){
 
 }
 
-function removeSpecialtext($string){
+function removeSpecialtext($string,$word){
 	$array=array(
-		"(countable) ", 
-		"(countable) ",
-		"(countable &amp; uncountable) ",
-		"(singular) ",
-		"(uncountable) ",
-		"&#160;",
-		"&#160;&#160;&#160;&#160; ",
-		"(uncountable), (old, no longer used) ",
-		"(countable); (art) ",
-		"(countable &amp; uncountable) ",
-		"(countable), (usually plural) ",
-		"(uncountable); (mathematics) ",
-		"(usually singular) ",
-		"(countable)",
-		"(countable &amp; uncountable);",
-		"(countable),",
-		"(usually plural)",
-		"(mathematics and countable) ",
-		"&#160;&#160;&#160;&#160;",
+		"[[",
+		"]]",
 		"none",
 		"  ",
-		"(astronomy)",
-		"(mathematics)",
-		"displaystyle",
-		"(mathematics) ",
-		"(no longer used) ",
-		"(technical);",
-		"(chemistry) ",
-		" (uncountable)",
-		"(uncountable); (physics) ",
-		"(uncountable); "
+		"==",
+		"===",
+		"&#160;",
+		"&#160;&#160;&#160;&#160;",
+		"{{countable}}, ", 
+		"{{singular}}, ",
+		"{{uncountable}}, ",
+		"{{old, no longer used}}, ",
+		"{{art}}, ",
+		"{{usually plural}}, ",
+		"{{usually singular}}, ",
+		"{{astronomy}}, ",
+		"{{mathematics}}, ",
+		"{{vulgar}}, ",
+		"{{irrnoun}}","{{galaxies}}",
+		"{{context}}","{{special}}",
+		"{{synonyms}}","{{silence}}","{{hush}}","{{peace}}","{{stillness}}","{{tranquility}}","{{calm}}",
+		"{{serenity}}","{{peacefulness}}","{{softness}}","{{antonyms}}","{{noise}}","{{sound}}",
+		"{{din}}","{{racket}}","{{clamor}}","{{clatter}}","{{blast}}","{{blare}}","{{commotion}}","{{disturbance}}","{{pandemonium}}","{{tumult}}","{{rumpus}}","{{turmoil}}","{{row}}",
+		"{{synonyms|gradient}}, ",
+		"{{-}}, ",
+		"{{technical}}, ",
+		"{{chemistry}}, ",
+		"{{uncountable}}, ",
+		"{{uncountable}}, ",
+		"{{physics}}, ",
+		"{{uncountable}}, ",
+		"{{countable}}", 
+		"{{singular}}",
+		"{{uncountable}}",
+		"{{old, no longer used}}",
+		"{{art}} ",
+		"{{usually plural}}",
+		"{{usually singular}}",
+		"{{astronomy}}",
+		"{{mathematics}}",
+		"{{vulgar}}",
+		"{{synonyms|gradient}}",
+		"{{-}}",
+		"{{technical}}",
+		"{{chemistry}}",
+		"{{uncountable}}",
+		"{{uncountable}}",
+		"{{physics}}",
+		"{{uncountable}}",
+		"{{usually \"the country\"}}",
+		"{{colloquial}}",
+		"{{cu noun}}",
+		"{{periodic table}}",
+		"{{stub}}",
+		"{{colorbox}}","{{gold}}",
+		"{{plural}}",
+		"{{icopies}}",
+		"{{countries}}",
+		"{{Stub}}",
+		"{{a}}","{{mathematics and countable}}","{{diplomacy}}",
+		"{{printing/countable}}",
+		// "A ".$word."",
 		);
 
 	for($i=0;$i<count($array);$i++){
@@ -103,13 +152,13 @@ function removeSpecialtext($string){
 	return $string;
 
 }
-function get_removeExample($string){
+function get_removeExample($string,$word){
 
 	$array= array(
 			"example--",
 			"example",
 			"sign, symbol",
-			"{\\",
+			// "{\\",
 			"Synonyms:",
 			"Antonyms:"
 
@@ -121,7 +170,7 @@ function get_removeExample($string){
 		}
 	}
 	
-	if(strlen($string)==1){
+	if(strlen($string)==1 || strtolower($string)=="a ".$word."" || $string ==strtolower($word)."s" || $word==strtolower($string)){
 		$string=0;
 	}
 	return $string;
@@ -131,17 +180,17 @@ function get_removeExample($string){
 
 function clean($string,$word) {
    // $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
-	$array= explode("Noun[change]", $string);
+	$array= explode("Noun", $string);
 	$output_word=array();
 	if(!empty($array[1])){
 		$output= get_string_word($array[1]);	
-		$output = removeSpecialtext($output);
+		$output = removeSpecialtext($output,$word);
 		$output = get_correct_text($output);
 		$output_array=explode("\n", $output);
 		$z=0;
 		$output_word["word"]=$word;
 		for($i=0;$i<count($output_array);$i++){
-			$output_array[$i]=get_removeExample($output_array[$i]);
+			$output_array[$i]=get_removeExample($output_array[$i],$word);
 			if(!empty($output_array[$i])&&$output_array[$i]!=null ){
 					$output_word["text"][$z]=$output_array[$i];
 					$z=$z+1;
@@ -167,13 +216,20 @@ $wiky=new wiky;
 // Call for the function parse() on the variable You created and pass some unparsed text to it, it will return parsed HTML or false if the content was empty. In this example we are loading the file input.wiki, escaping all html characters with htmlspecialchars, running parse and echoing the output
 // $input=file_get_contents("input.wiki");
 // $input=htmlspecialchars($input);
-$word=/*"wrong";*/ $_GET['word'];
+$word=/*"stop"*/ $_GET['word'];
 $word=strtolower($word);
-$input= file_get_contents("https://simple.wiktionary.org/wiki/".$word."");
-$input= str_replace("<dd><i>", "<dd><i> example--", $input);
-$input= str_replace("example", " example--", $input);
-$input= str_replace('<p>', '<p> example--', $input);
-$input= str_replace('<b>', '<b> example-- ', $input);
+$input= file_get_contents("https://simple.wiktionary.org/wiki/".$word."?action=edit");
+$input= str_replace("{{noun", "{{ example--", $input);
+$input= str_replace(":", " : example-- ", $input);
+$input= str_replace("*", " * example-- ", $input);
+$input= str_replace("File :", "\n", $input);
+$input= str_replace("<gallery>", "Gallery ", $input);
+$input= str_replace("}}", " example-- }} \n ", $input);
+$input= str_replace("{{", "\n {{ example--", $input);
+// $input= str_replace("|", "}}{{", $input);
+/*$input= str_replace('<p>', '<p> example--', $input);*/
+// $input= str_replace('<b>', '<b> example-- ', $input);
+/*$input= str_replace('<div class="thumbcaption">','<div class="thumbcaption"> example--', $input);*/
 $output=$wiky->parse($input);
 $output=strip_tags($output);
 // echo $output;

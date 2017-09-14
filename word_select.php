@@ -13,11 +13,12 @@ $output=array();$z=0;
 for($i=0;$i<count($array);$i++){
 
 	$ouput=file_get_contents("http://localhost/Wiky_php-master/select.php?word=".strtolower(trim($array[$i]))."");
-	if($ouput!=null){
-		$output[$z]=json_decode($ouput);
-		$z=$z+1;
-	}
+	// if($ouput!=null){
+	// 	$output[$z]=json_decode($ouput);
+	// 	$z=$z+1;
+	// }
+	echo $ouput;
 }
 
-echo json_encode($output,JSON_PRETTY_PRINT);
+// echo json_encode($output,JSON_PRETTY_PRINT);
 ?>
